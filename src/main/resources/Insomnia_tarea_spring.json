@@ -1,0 +1,301 @@
+type: collection.insomnia.rest/5.0
+name: Tarea_Rest
+meta:
+id: wrk_9d9903b605af4236a356c16f634715d7
+created: 1750033550737
+modified: 1750033550737
+collection:
+- url: "{{ _.base_url }}auth/login"
+name: LogIn
+meta:
+id: req_06b0cefa7d384b2fb0ccd95944c1dde8
+created: 1750033569963
+modified: 1750038804662
+isPrivate: false
+sortKey: -1750034497515
+method: POST
+body:
+mimeType: application/json
+text: |-
+{
+"email": "user@gmail.com",
+"password": "user123"
+}
+headers:
+- name: Content-Type
+value: application/json
+- name: User-Agent
+value: insomnia/11.1.0
+settings:
+renderRequestBody: true
+encodeUrl: true
+followRedirects: global
+cookies:
+send: true
+store: true
+rebuildPath: true
+- url: "{{ _.base_url }}categories"
+name: GetCategories
+meta:
+id: req_827ed54bbe314e2298a79f963a8aa571
+created: 1750034286936
+modified: 1750035095520
+isPrivate: false
+sortKey: -1750034482801.5
+method: GET
+headers:
+- name: User-Agent
+value: insomnia/11.1.0
+authentication:
+type: bearer
+token: "{% response 'body', 'req_06b0cefa7d384b2fb0ccd95944c1dde8',
+'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+settings:
+renderRequestBody: true
+encodeUrl: true
+followRedirects: global
+cookies:
+send: true
+store: true
+rebuildPath: true
+- url: "{{ _.base_url }}categories/2"
+name: UpdateCategory
+meta:
+id: req_534dd5de23934da99ae5ab7d250b75a1
+created: 1750034468188
+modified: 1750035250514
+isPrivate: false
+sortKey: -1750034468188
+method: PUT
+body:
+mimeType: application/json
+text: |-
+{
+"name": "CellPhones",
+"description": "Very useful devices for your daily life"
+}
+headers:
+- name: Content-Type
+value: application/json
+- name: User-Agent
+value: insomnia/11.1.0
+authentication:
+type: bearer
+token: "{% response 'body', 'req_06b0cefa7d384b2fb0ccd95944c1dde8',
+'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+settings:
+renderRequestBody: true
+encodeUrl: true
+followRedirects: global
+cookies:
+send: true
+store: true
+rebuildPath: true
+- url: "{{ _.base_url }}categories"
+name: CreateCategory
+meta:
+id: req_4a313b82de834bee8ad0c84f3fb7ed58
+created: 1750034497415
+modified: 1750034774743
+isPrivate: false
+sortKey: -1750034497415
+method: POST
+body:
+mimeType: application/json
+text: |-
+{
+"name": "Accesories",
+"description": "Items that allows you to improve your devices"
+}
+headers:
+- name: Content-Type
+value: application/json
+- name: User-Agent
+value: insomnia/11.1.0
+authentication:
+type: bearer
+token: "{% response 'body', 'req_06b0cefa7d384b2fb0ccd95944c1dde8',
+'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+settings:
+renderRequestBody: true
+encodeUrl: true
+followRedirects: global
+cookies:
+send: true
+store: true
+rebuildPath: true
+- url: "{{ _.base_url }}categories/2"
+name: DeleteCategory
+meta:
+id: req_8deff37ccc334bf7a4b614a6076c9505
+created: 1750035272663
+modified: 1750038787486
+isPrivate: false
+sortKey: -1750034468088
+method: DELETE
+headers:
+- name: User-Agent
+value: insomnia/11.1.0
+authentication:
+type: bearer
+token: "{% response 'body', 'req_06b0cefa7d384b2fb0ccd95944c1dde8',
+'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+settings:
+renderRequestBody: true
+encodeUrl: true
+followRedirects: global
+cookies:
+send: true
+store: true
+rebuildPath: true
+- url: "{{ _.base_url }}products"
+name: CreateProduct
+meta:
+id: req_e2d70f2d070244e0af99b65f7fae7c37
+created: 1750035373831
+modified: 1750038470729
+isPrivate: false
+sortKey: -1750034467988
+method: POST
+body:
+mimeType: application/json
+text: |-
+{
+"name": "Iphone",
+"description": "Premiun and unique device",
+"price": 20003.02,
+"stockAmount": 2,
+"category": {
+"id": 3
+}
+}
+headers:
+- name: Content-Type
+value: application/json
+- name: User-Agent
+value: insomnia/11.1.0
+authentication:
+type: bearer
+token: "{% response 'body', 'req_06b0cefa7d384b2fb0ccd95944c1dde8',
+'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+settings:
+renderRequestBody: true
+encodeUrl: true
+followRedirects: global
+cookies:
+send: true
+store: true
+rebuildPath: true
+- url: "{{ _.base_url }}products/2"
+name: UpdateCategory
+meta:
+id: req_0f59d0811ace482d8de8a8b5af75a2c5
+created: 1750038477313
+modified: 1750038585379
+isPrivate: false
+sortKey: -1750034467888
+method: PUT
+body:
+mimeType: application/json
+text: |-
+{
+"name": "Iphone",
+"description": "Premiun and unique device",
+"price": 20003.02,
+"stockAmount": 2,
+"category": {
+"id": 5
+}
+}
+headers:
+- name: Content-Type
+value: application/json
+- name: User-Agent
+value: insomnia/11.1.0
+authentication:
+type: bearer
+token: "{% response 'body', 'req_06b0cefa7d384b2fb0ccd95944c1dde8',
+'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+settings:
+renderRequestBody: true
+encodeUrl: true
+followRedirects: global
+cookies:
+send: true
+store: true
+rebuildPath: true
+- url: "{{ _.base_url }}products"
+name: GetProducts
+meta:
+id: req_cb2273c9b4c548c29903fb7a76f3ac16
+created: 1750038598972
+modified: 1750038655755
+isPrivate: false
+sortKey: -1750034467938
+method: GET
+headers:
+- name: User-Agent
+value: insomnia/11.1.0
+authentication:
+type: bearer
+token: "{% response 'body', 'req_06b0cefa7d384b2fb0ccd95944c1dde8',
+'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+settings:
+renderRequestBody: true
+encodeUrl: true
+followRedirects: global
+cookies:
+send: true
+store: true
+rebuildPath: true
+- url: "{{ _.base_url }}products/2"
+name: New Request
+meta:
+id: req_6c0424a34fe241a3ade5d405a583758c
+created: 1750038677854
+modified: 1750038714811
+isPrivate: false
+sortKey: -1750034467788
+method: DELETE
+headers:
+- name: User-Agent
+value: insomnia/11.1.0
+authentication:
+type: bearer
+token: "{% response 'body', 'req_06b0cefa7d384b2fb0ccd95944c1dde8',
+'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+settings:
+renderRequestBody: true
+encodeUrl: true
+followRedirects: global
+cookies:
+send: true
+store: true
+rebuildPath: true
+cookieJar:
+name: Default Jar
+meta:
+id: jar_c49f80970e0cc97fbaa19830855c44997927ceb7
+created: 1750033550741
+modified: 1750033550741
+environments:
+name: Base Environment
+meta:
+id: env_c49f80970e0cc97fbaa19830855c44997927ceb7
+created: 1750033550740
+modified: 1750033761620
+isPrivate: false
+data:
+"":
+base_url: http://localhost:8080/
+subEnvironments:
+- name: dev
+meta:
+id: env_f3b95e67433d4ad691857bc7123f5e96
+created: 1750033605700
+modified: 1750034244065
+isPrivate: false
+sortKey: 1750033605700
+data:
+base_url: http://localhost:8080/
+color: "#11ff00"
